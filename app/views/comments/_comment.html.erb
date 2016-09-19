@@ -6,9 +6,15 @@
 </div>
 
 <p>
+	<% if user_signed_in? %>
+
 <%= link_to 'Delete', [comment.post, comment],
 						method: :delete,
 						class: "button",
 						data: {confirm: "Are you sure?"} %>
+	<% else %>
+	<%= link_to 'if login, you can delete the comments',user_session_path %>
+	<%end%>
+
 </p>
 </div>
