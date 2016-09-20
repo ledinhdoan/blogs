@@ -1,4 +1,4 @@
-<div class="col-sm-11 col-xs-12 blog-content">
+<div id="post_content">
   
   <h2 class="text-center"><%= @post.title %></h2>
   <h5 class="text-center">Submitted <%= time_ago_in_words(@post.created_at)%> ago</h5>
@@ -6,6 +6,7 @@
   <%= link_to "Edit post   |", edit_post_path %>
   <%= link_to "Delete post", post_path(@post), method: :delete, data: {confirm: "Are you sure ?"} %>
   <%end%>
+  <p>-----------------------------------------------------------------</p>
   <div><%=  @post.body %></div>
   
  <%= render 'comments/comment' %>

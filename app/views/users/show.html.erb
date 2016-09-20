@@ -1,0 +1,5 @@
+
+<h1><%= @user.email %></h1><br>
+<% @user.post.each do |post| %>
+<%= link_to post.title, post_path(post) %><br>
+<%end %>

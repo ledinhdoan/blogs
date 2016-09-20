@@ -34,7 +34,7 @@ a {
 	left: 0;
 	top: 0;
 	height: 100%;
-	background: #f5f7f9;
+	background: #F0F8FF;
 	padding: 7em 0 0 0;
 	border-right: 1px solid #d6dce0;
 	#logo {
@@ -56,7 +56,7 @@ a {
 		li {
 			padding: .5em 0;
 			a {
-				color: #9eafba;
+				color: blue;
 				text-decoration: none;
 				transition: all .4s ease;
 				&:hover {
@@ -72,9 +72,9 @@ a {
 	}
 	.sign_in {
 		position: absolute;
-		right: 3em;
+		right: 40em;
 		top: 80%;
-		font-size: .8em;
+		font-size: .15em;
 		color: #9eafba;
 	}
 }

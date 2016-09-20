@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/index'
+
   #get 'welcome/index'
   #root 'welcome#index'
   devise_for :users
@@ -6,6 +8,12 @@ Rails.application.routes.draw do
   	resources :comments
   end
   root 'posts#index'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
 
   get '/about', to: 'pages#about'
 end

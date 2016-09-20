@@ -1,4 +1,4 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Blog</title>
@@ -18,20 +18,20 @@
 		<ul>
 			
 			<li><%= link_to "Blog",root_path %></li>
+			<li><%= link_to "Blogger", users_path %></li>
 			<li><%= link_to "About", about_path %></li>
 		</ul>
 		
-		<p class="sign_up">Admin Login</p>
 	</div>
 
 	<div id="main_content">
 		<div id="header">
-			<p>ALL POSTS</p>
+			<p></p>
 				<% if user_signed_in? %>
-				<%= link_to "NEW POST",new_post_path %><br>
+				<%= link_to "NEW POST   | ",new_post_path %>
 				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
 			<% else %>
-			<%= link_to "Log In", user_session_path %>
+			<%= link_to "LOG IN", user_session_path %>
 			<%end%>
 		</div>
 		<% flash.each do |name, msg| %>
