@@ -1,0 +1,13 @@
+<% @comments.each do |comment| %>
+<p></p>
+<%= comment.user.email %>
+<p><%= comment.content %> </p>
+
+<% if user_signed_in? %>
+<% if current_user == comment.user %>
+<%= link_to "Delete comment  |", [comment.post,comment], method: :Delete, data: {confirm: "Are you sure ?"} %>
+<%= link_to "Edit comment", edit_post_comment_path(comment.post,comment) %>
+<%end%>
+<%end%>
+<%end%>
+<%= render 'comments/form' %>
