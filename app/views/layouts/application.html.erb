@@ -12,7 +12,7 @@
 	<div id="sidebar">
 		<div id="logo">
 			<%= link_to root_path do %>
-				<%= image_tag "logo.png" %>
+				<%= image_tag "logo2.jpeg" %>
 				<% end %>
 		</div>
 		<ul>
@@ -26,9 +26,8 @@
 
 	<div id="main_content">
 		<div id="header">
-			<p></p>
-				<% if user_signed_in? %>
-				<%= link_to "NEW POST   | ",new_post_path %>
+			<% if user_signed_in? %>
+				<%= link_to "NEW POST   _|_  ", new_post_path %>
 				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
 			<% else %>
 			<%= link_to "LOG IN", user_session_path %>
