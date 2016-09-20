@@ -29,7 +29,7 @@
 			<p>ALL POSTS</p>
 				<% if user_signed_in? %>
 				<%= link_to "NEW POST",new_post_path %><br>
-				<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>
 			<% else %>
 			<%= link_to "Log In", user_session_path %>
 			<%end%>
