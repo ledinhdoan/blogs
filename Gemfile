@@ -50,5 +50,3 @@ group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'puma',           '3.1.0'
 end
-
-gem 'sinatra', '1.0'
