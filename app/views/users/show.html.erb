@@ -1,5 +1,12 @@
-
+<div class="panel panel-default ">
+	<div class="panel-heading">	
 <h1><%= @user.email %></h1><br>
+</div>
+<div class="panel-body">
 <% @user.post.each do |post| %>
+</div>
+<div class="form-group">
 <%= link_to post.title, post_path(post) %><br>
+</div>
 <%end %>
+</div>
