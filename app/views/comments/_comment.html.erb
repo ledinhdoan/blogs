@@ -1,5 +1,5 @@
 <% @comments.each do |comment| %>
-<p></p>
+<div class="text-center">
 <%= comment.user.email %>
 <p><%= comment.content %> </p>
 
@@ -11,3 +11,4 @@
 <%end%>
 <%end%>
 <%= render 'comments/form' %>
+</div>

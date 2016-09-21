@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	has_many :post, dependent: :destroy
+	has_many :posts, dependent: :destroy
   	has_many :comments, dependent: :destroy
   	has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
@@ -15,7 +15,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-end
+
+# Returns a user's status feed.
+  def feed
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    post.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id)
+
+  end
 # Follows a user.
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
@@ -30,3 +38,4 @@ end
   def following?(other_user)
     following.include?(other_user)
   end
+end

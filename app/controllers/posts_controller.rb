@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 def index
 	@posts = Post.all.order('created_at DESC')
 end
+
 def show
 	@post = Post.find(params[:id])
 	@comments = Comment.where(post_id: @post).order('created_at DESC')
@@ -12,7 +13,7 @@ def new
 end
 
 def create
-		@post = current_user.post.build(post_params)
+		@post = current_user.posts.build(post_params)
 		if @post.save
 			redirect_to @post
 		else

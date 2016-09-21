@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="panel-sidebar">
+	<div class="text-left">
 		<div id="logo">
 			<%= link_to root_path do %>
 				<%= image_tag "logo2.jpeg" %>
@@ -22,8 +22,8 @@
 		</ul>
 	</div>
 
-	<div id="main_content">
-		<div id="header">
+	<div class="text-center">
+		<div class="text-left">
 			<% if user_signed_in? %>
 				<%= link_to "NEW POST   _|_  ", new_post_path %>
 				<%= link_to "LOG OUT", destroy_user_session_path, method: :delete %>

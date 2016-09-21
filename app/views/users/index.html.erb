@@ -1,5 +1,7 @@
+<div class="text-center">
 <% @users = User.all %>
 <% @users.each do |user| %>
   <%= user.id %><br/>
   <%= link_to user.email, user_path(user)%><br/>
 <% end %>
+</div>
